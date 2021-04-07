@@ -4,10 +4,10 @@ class SongsController < ApplicationController
   # GET /songs
   def index
     @songs = Song.all
-    if entries.empty?
+    if @songs.empty?
         render json: {message: "You have no songs, please write one down."}
     else
-        render json: Song.arr_to_json
+        render json: @songs.arr_to_json
     end
   end
 
@@ -16,17 +16,17 @@ class SongsController < ApplicationController
     if @song.nil?
         render json: {message: "You have no songs, please write one down."}
     else
-        render json: @song.entry_to_json
+        render json: @song.song_to_json
     end
   end
 
   # POST /songs
   def create
-    @artist = Artist.find_or_create_by(name: params[:artist][:name])
+    @artist = Artist.find_or_create_by(id: params[:id])
     @song = Song.new(song_params)
     @song.artist_id = @artist.id
     if @song.save
-      render json: @song, status: :created, location: @song
+      render @song.song_to_json
     else
       render json: @song.errors, status: :unprocessable_entity
     end

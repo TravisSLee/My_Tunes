@@ -3,17 +3,20 @@ class Song < ApplicationRecord
 
     def self.arr_to_json
         self.all.map do |e|
-            e.entry_to_json
+            e.song_to_json
         end
     end 
 
-    def entry_to_json
+    def song_to_json
         {
             id: self.id,
             title: self.title,
-            album_title: self.album_title
+            album_title: self.album_title,
             year_of_release: self.year_of_release,
-            artist: self.artist
+            artist: {
+                id: self.artist.id,
+                name: self.artist.name
+            }
             
         }
     end

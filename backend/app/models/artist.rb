@@ -3,11 +3,11 @@ class Artist < ApplicationRecord
 
     def self.arr_to_json
         self.all.map do |e|
-            e.entry_to_json
+            e.artist_to_json
         end
     end 
 
-    def entry_to_json
+    def artist_to_json
         {
             id: self.id,
             name: self.name
