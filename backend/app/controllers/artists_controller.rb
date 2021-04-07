@@ -4,13 +4,20 @@ class ArtistsController < ApplicationController
   # GET /artists
   def index
     @artists = Artist.all
-
-    render json: @artists
+    if @artists.empty?
+        render json: {message: "You have no artists, please write one down."}
+    else
+        render json: @artists.arr_to_json
+    end
   end
 
   # GET /artists/1
   def show
-    render json: @artist
+    if @artist.nil?
+      render json: {message: "You have no songs, please write one down."}
+  else
+      render json: @artist.artist_to_json
+  end
   end
 
   # POST /artists
