@@ -10,8 +10,7 @@ class Artist < ApplicationRecord
     def entry_to_json
         {
             id: self.id,
-            name: self.name,
-            birthday: self.birthday
+            name: self.name
             
         }
     end

@@ -1,4 +1,4 @@
-class Album < ApplicationRecord
+class Song < ApplicationRecord
     belongs_to :artist
 
     def self.arr_to_json
@@ -11,6 +11,7 @@ class Album < ApplicationRecord
         {
             id: self.id,
             title: self.title,
+            album_title: self.album_title
             year_of_release: self.year_of_release,
             artist: self.artist
             
