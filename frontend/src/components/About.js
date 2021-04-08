@@ -4,7 +4,7 @@ class About extends Component {
     render() {
         return (
             <div>
-                
+                Something here isnt right
             </div>
         )
     }

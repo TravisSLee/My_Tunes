@@ -3,7 +3,7 @@ const initialState = {
     loading: true
 }
 
-const songsReducer = (state, action) => {
+const songsReducer = (state = initialState, action) => {
     switch(action.type) {
         default: 
             return state;
