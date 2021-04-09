@@ -21,6 +21,9 @@ const songsReducer = (state = initialState, action) => {
                 ...state,
                 songs: [...state.songs, action.song]
             }
+            case "DELETE_SONG":
+                let songs = state.songs.filter(song => song.id !== action.id);
+                return {...state, songs}
         default: 
             return state;
     }

@@ -23,3 +23,15 @@ export const addSong = (song, history) => {
             history.push("/songs")
     }
 }
+
+export const deleteSong = (song) => {
+    return dispatch => {
+        fetch("http://localhost:3001/songs" + `/${song.id}`, {
+            method: "DELETE",
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        })
+        dispatch({ type: "DELETE_SONG", song })
+    }
+}

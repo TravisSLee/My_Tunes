@@ -24,10 +24,8 @@ class Form extends Component {
     }
 
     render() {
-        console.log(this.state.artist)
         return (
             <div>
-                <h3>Create a Song</h3>
                 <form onSubmit={ this.handleSubmit }>
                     <div>
                         <label htmlFor="title">Title:</label>

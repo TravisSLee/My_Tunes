@@ -8,7 +8,7 @@ import Footer from './components/Footer';
 import Home from './components/Home';
 import ErrorPage from './components/ErrorPage';
 import About from './components/About';
-import Index from './components/Index';
+import Songs from './containers/Songs'
 import Form from './components/Form';
 
 class App extends Component {
@@ -28,7 +28,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={ Home } />
             <Route exact path="/about" component={ About } />
-            <Route exact path="/songs" component={ Index } />
+            <Route exact path="/songs" component={ Songs } />
             <Route exact path="/songs/new" component={ Form } />
             <Route component={ ErrorPage } /> 
           </Switch>
