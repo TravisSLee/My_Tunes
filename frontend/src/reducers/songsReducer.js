@@ -10,11 +10,16 @@ const songsReducer = (state = initialState, action) => {
                 ...state,
                 loading: true
             }
-            case "SET_SONGS":
+        case "SET_SONGS":
+        return {
+            ...state,
+            loading: false,
+            songs: action.songs
+        }
+        case "ADD_SONG":
             return {
                 ...state,
-                loading: false,
-                songs: action.songs
+                songs: [...state.songs, action.song]
             }
         default: 
             return state;

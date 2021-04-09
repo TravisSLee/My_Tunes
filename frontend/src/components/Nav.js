@@ -9,6 +9,7 @@ class Nav extends Component {
                    <li><Link to="/" >Home</Link></li>
                    <li><Link to="/about">About</Link></li>
                    <li><Link to="/songs">Your List of Songs</Link></li>
+                   <li><Link to="/songs/new">New Song</Link></li>
                    <li><Link to="/silly">Silly Link</Link></li>
                </ul>
             </div>

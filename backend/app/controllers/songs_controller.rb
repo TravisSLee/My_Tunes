@@ -22,11 +22,11 @@ class SongsController < ApplicationController
 
   # POST /songs
   def create
-    @artist = Artist.find_or_create_by(name: params[:artist][:name])
+    @artist = Artist.find_or_create_by(name: params[:song][:artist])
     @song = Song.new(song_params)
     @song.artist_id = @artist.id
     if @song.save
-      render @song.song_to_json
+      render json: @song.song_to_json
     else
       render json: @song.errors, status: :unprocessable_entity
     end

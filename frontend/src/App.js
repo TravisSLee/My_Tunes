@@ -2,13 +2,14 @@ import './App.css';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { getSongs } from './actions/Index';
+import { getSongs } from './actions';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 import Home from './components/Home';
 import ErrorPage from './components/ErrorPage';
 import About from './components/About';
 import Index from './components/Index';
+import Form from './components/Form';
 
 class App extends Component {
   
@@ -28,6 +29,7 @@ class App extends Component {
             <Route exact path="/" component={ Home } />
             <Route exact path="/about" component={ About } />
             <Route exact path="/songs" component={ Index } />
+            <Route exact path="/songs/new" component={ Form } />
             <Route component={ ErrorPage } /> 
           </Switch>
           <Footer />
