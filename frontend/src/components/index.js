@@ -4,7 +4,7 @@ class Index extends Component {
     render() {
         return (
             <div>
-                
+                So many songs
             </div>
         )
     }

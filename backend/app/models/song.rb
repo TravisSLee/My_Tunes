@@ -1,5 +1,6 @@
 class Song < ApplicationRecord
     belongs_to :artist
+    validates :title, :year_of_release, :album_title, presence: true
 
     def self.arr_to_json
         self.all.map do |e|

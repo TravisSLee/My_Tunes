@@ -1,5 +1,6 @@
 class Artist < ApplicationRecord
     has_many :albums
+    validates :name, presence: true
 
     def self.arr_to_json
         self.all.map do |e|
