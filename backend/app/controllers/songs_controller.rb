@@ -22,7 +22,7 @@ class SongsController < ApplicationController
 
   # POST /songs
   def create
-    @artist = Artist.find_or_create_by(id: params[:id])
+    @artist = Artist.find_or_create_by(name: params[:artist][:name])
     @song = Song.new(song_params)
     @song.artist_id = @artist.id
     if @song.save

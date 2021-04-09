@@ -1,6 +1,8 @@
 import './App.css';
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { getSongs } from './actions/Index';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 import Home from './components/Home';
@@ -10,7 +12,15 @@ import Index from './components/Index';
 
 class App extends Component {
   
+  componentDidMount(){
+    this.props.getSongs();
+  }
   render(){
+    if (this.props.loading) {
+      return (
+        <h3> One Moment Please..... </h3>
+      )
+    }
     return (
       <Router> 
           <Nav />
@@ -27,4 +37,10 @@ class App extends Component {
   
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    loading: state.loading
+  }
+}
+
+export default connect(mapStateToProps, { getSongs })(App);
