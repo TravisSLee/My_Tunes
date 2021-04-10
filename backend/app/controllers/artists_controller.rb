@@ -15,9 +15,9 @@ class ArtistsController < ApplicationController
   def show
     if @artist.nil?
       render json: {message: "You have no songs, please write one down."}
-  else
-      render json: @artist.artist_to_json
-  end
+    else
+        render json: @artist.artist_to_json
+    end
   end
 
   # POST /artists

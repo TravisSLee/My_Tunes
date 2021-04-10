@@ -11,7 +11,6 @@ class Form extends Component {
     }
 
     handleChange = e => {
-        console.log("Hi")
         this.setState({
             [e.target.name]: e.target.value
         })

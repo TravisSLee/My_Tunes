@@ -2,7 +2,7 @@ import './App.css';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { getSongs } from './actions';
+import { getSongs, getArtists } from './actions';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 import Home from './components/Home';
@@ -10,11 +10,13 @@ import ErrorPage from './components/ErrorPage';
 import About from './components/About';
 import Songs from './containers/Songs'
 import Form from './components/Form';
+import Artists from './containers/Artists';
 
 class App extends Component {
   
   componentDidMount(){
     this.props.getSongs();
+    this.props.getArtists();
   }
   render(){
     if (this.props.loading) {
@@ -30,6 +32,7 @@ class App extends Component {
             <Route exact path="/about" component={ About } />
             <Route exact path="/songs" component={ Songs } />
             <Route exact path="/songs/new" component={ Form } />
+            <Route exact path="/artists" component={ Artists } />
             <Route component={ ErrorPage } /> 
           </Switch>
           <Footer />
@@ -45,4 +48,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { getSongs })(App);
+export default connect(mapStateToProps, { getSongs,getArtists })(App);

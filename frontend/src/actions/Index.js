@@ -7,6 +7,15 @@ export const getSongs = () => {
     }
 }
 
+export const getArtists = () => {
+    return dispatch => {
+        dispatch({ type: "LOADING" }) 
+        fetch("http://localhost:3001/artists")
+        .then(resp => resp.json())
+        .then(artists => dispatch({ type: "SET_ARTISTS", artists}))
+    }
+}
+
 export const addSong = (song, history) => {
     return dispatch => {
         fetch("http://localhost:3001/songs",{

@@ -4,8 +4,8 @@ class Song < ApplicationRecord
     accepts_nested_attributes_for :artist
 
     def self.arr_to_json
-        self.all.map do |e|
-            e.song_to_json
+        self.all.map do |s|
+            s.song_to_json
         end
     end 
 

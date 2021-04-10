@@ -1,9 +1,4 @@
-const initialState = {
-    songs: [],
-    loading: true
-}
-
-const songsReducer = (state = initialState, action) => {
+const songsReducer = (state = { songs: [], loading: false}, action) => {
     switch(action.type) {
         case "LOADING":
             return {
@@ -11,11 +6,11 @@ const songsReducer = (state = initialState, action) => {
                 loading: true
             }
         case "SET_SONGS":
-        return {
-            ...state,
-            loading: false,
-            songs: action.songs
-        }
+            return {
+                ...state,
+                loading: false,
+                songs: action.songs
+            }
         case "ADD_SONG":
             return {
                 ...state,

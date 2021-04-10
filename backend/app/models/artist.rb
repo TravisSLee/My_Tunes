@@ -3,8 +3,8 @@ class Artist < ApplicationRecord
     validates :name, presence: true
 
     def self.arr_to_json
-        self.all.map do |e|
-            e.artist_to_json
+        self.all.map do |a|
+            a.artist_to_json
         end
     end 
 
