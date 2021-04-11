@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { getSongs, getArtists } from './actions';
-import Nav from './components/Nav';
+import NavBar from './components/Nav';
 import Footer from './components/Footer';
 import Home from './components/Home';
 import ErrorPage from './components/ErrorPage';
@@ -26,7 +26,7 @@ class App extends Component {
     }
     return (
       <Router> 
-          <Nav />
+          <NavBar />
           <Switch>
             <Route exact path="/" component={ Home } />
             <Route exact path="/about" component={ About } />

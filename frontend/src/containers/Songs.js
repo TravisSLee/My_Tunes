@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Song from '../components/Song';
+import Container from 'react-bootstrap/Container';
 
 class Songs extends Component {
     render() {
@@ -12,9 +13,11 @@ class Songs extends Component {
         name={song.artist.name}
         />)
         return (
-            <div className="container">
-                <h1>Here's The List of Your Songs!</h1>
-                { songs }
+            <div>
+                <Container className="songContainer">
+                    <h1>Here's The List of Your Songs!</h1>
+                    { songs }
+                </Container>
             </div>
         )
     }

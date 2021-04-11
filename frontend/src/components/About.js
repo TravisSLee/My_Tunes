@@ -4,7 +4,7 @@ class About extends Component {
     render() {
         return (
             <div>
-                Something here isnt right
+                <p> This is an app about your favorite tunes. Now, please don't destroy the world with it.</p>
             </div>
         )
     }

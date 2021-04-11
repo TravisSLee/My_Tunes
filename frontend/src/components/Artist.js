@@ -6,6 +6,7 @@ class Artist extends Component {
         return (
             <div>
                 <h3>{ name }</h3>
+                _______
             </div>
         )
     }
