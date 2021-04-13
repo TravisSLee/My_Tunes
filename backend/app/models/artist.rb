@@ -1,5 +1,5 @@
 class Artist < ApplicationRecord
-    has_many :albums
+    has_many :songs
     validates :name, presence: true
 
     def self.arr_to_json
@@ -8,11 +8,19 @@ class Artist < ApplicationRecord
         end
     end 
 
+    def artist_songs_to_json
+        self.songs.map do |s|
+            s.song_to_json
+        end
+    end
+
     def artist_to_json
         {
             id: self.id,
             name: self.name
-            
+            songs: [{self.songs.artist_songs_to_json}]
         }
     end
+
+    
 end
