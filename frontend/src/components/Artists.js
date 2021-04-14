@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Artist from '../components/Artist';
+import Artist from './Artist';
 
 class Artists extends Component {
     render() {
@@ -13,6 +13,7 @@ class Artists extends Component {
                 { artists }
             </div>
         )
+
     }
 }
 const mapStateToProps = state => {

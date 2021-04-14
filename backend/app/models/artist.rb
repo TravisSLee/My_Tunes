@@ -18,7 +18,6 @@ class Artist < ApplicationRecord
         {
             id: self.id,
             name: self.name
-            songs: [{self.songs.artist_songs_to_json}]
         }
     end
 
