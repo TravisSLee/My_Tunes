@@ -2,11 +2,14 @@ import React, { Component } from 'react';
 import Songs from '../components/Songs';
 import Container from 'react-bootstrap/Container';
 
+
 class SongsContainer extends Component {
+    
+    
     render() {
         return (
             <div>
-                <Container className="songContainer">
+                <Container className="songsContainer">
                     <h1>Here's The List of Your Songs!</h1>
                     <Songs />
                 </Container>

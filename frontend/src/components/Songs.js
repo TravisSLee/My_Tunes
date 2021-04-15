@@ -4,7 +4,17 @@ import Song from '../components/Song';
 
 
 class Songs extends Component {
-    render() {
+  filterSongs = (songs, query) => {
+    if (!query ){
+      return this.props.songs
+    }
+    return this.props.songs.filter((song) => {
+      const songName = song.name.toLowerCase();
+      return songName.includes(query);
+    })
+  }  
+  
+  render() {
         const songs = this.props.songs.map( (song, i) => <Song key={i} 
         id = {song.id}
         title={song.title}
@@ -14,7 +24,7 @@ class Songs extends Component {
         />)
         return (
             <div>
-                    { songs }
+                { songs }
             </div>
         )
     }
