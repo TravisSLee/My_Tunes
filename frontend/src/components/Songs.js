@@ -8,18 +8,21 @@ class Songs extends Component {
   
   filterSongs = (props) => {
     if ( this.props.query === '' || this.props.query === undefined ){
-      
       return this.props.songs
     } else {
-      return this.props.songs.filter((song) => {
+      let filteredList = []
+      this.props.songs.filter((song) => {
         const songTitle = song.title.toLowerCase();
-        return songTitle.includes(this.props.query);
+        if (songTitle.includes(this.props.query.toLowerCase())){
+          filteredList.push(song);
+        };
       })
+      debugger
+      return filteredList
     };
   }
   
-  
-  renderSongs = (props) => {
+  renderSongs = () => {
     return this.filterSongs().map( (song, i) =>  
         <Song key={i} 
         id = {song.id}
@@ -30,6 +33,7 @@ class Songs extends Component {
         />)
   }
   render() {
+    debugger
         return (
             <div>
                 <SongSearch filterSongs={ this.filterSongs }/>
@@ -47,4 +51,4 @@ const mapStateToProps = state => {
     }
   }
 
-export default connect(mapStateToProps)(Songs)
+export default connect(mapStateToProps)(Songs);

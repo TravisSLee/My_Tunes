@@ -11,7 +11,6 @@ const NavBar = () => {
                    <Nav.Link href="/songs">Your List of Songs</Nav.Link>
                    <Nav.Link href="/artists">Your List of Artists</Nav.Link>
                    <Nav.Link href="/songs/new">New Song</Nav.Link>
-                   <Nav.Link href="/silly">Silly Link</Nav.Link>
                </Nav>
             </Navbar>
         )

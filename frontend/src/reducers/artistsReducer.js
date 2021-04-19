@@ -14,7 +14,7 @@ const artistsReducer = (state = { artists: [], loading: false}, action) => {
         case "ADD_ARTIST":
             return {
                 ...state,
-                songs: [...state.artists, action.artist]
+                artists: [...state.artists, action.artist]
             }
             default: 
                 return state;

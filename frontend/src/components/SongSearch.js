@@ -7,9 +7,6 @@ class SongSearch extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         this.props.changeQuery(this.state);
-        this.setState({
-            query: ''
-        })
     }
 
     handleChange = (e) => {

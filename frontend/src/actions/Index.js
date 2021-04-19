@@ -27,10 +27,10 @@ export const addSong = (song, history) => {
         body: JSON.stringify({ song })
         })
         .then(resp => resp.json())
-        .then(song => 
-            dispatch({ type: "ADD_SONG", song }))
+        .then(song => {
+            dispatch({ type: "ADD_SONG", song })
             history.push("/songs")
-    }
+    })}
 }
 
 export const deleteSong = (song) => {
