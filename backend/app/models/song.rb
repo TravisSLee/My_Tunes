@@ -3,7 +3,7 @@ class Song < ApplicationRecord
     validates :title, :year_of_release, :album_title, presence: true
     accepts_nested_attributes_for :artist
 
-    def self.arr_to_json
+    def self.song_arr_to_json
         self.all.map do |s|
             s.song_to_json
         end

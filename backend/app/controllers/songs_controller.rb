@@ -7,7 +7,7 @@ class SongsController < ApplicationController
     if @songs.empty?
         render json: {message: "You have no songs, please write one down."}
     else
-        render json: @songs.arr_to_json
+        render json: @songs.song_arr_to_json
     end
   end
 
