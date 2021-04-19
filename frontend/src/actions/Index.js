@@ -44,3 +44,10 @@ export const deleteSong = (song) => {
         dispatch({ type: "DELETE_SONG", song })
     }
 }
+
+export const changeQuery = ({query}) => {
+    return {
+        type: 'SEARCH',
+        query
+    }
+}

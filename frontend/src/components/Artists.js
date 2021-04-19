@@ -17,7 +17,6 @@ class Artists extends Component {
     }
 }
 const mapStateToProps = state => {
-    console.log(state)
     return {
       artists: state.artistsReducer.artists
     }

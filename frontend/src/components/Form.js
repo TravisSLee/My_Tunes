@@ -18,7 +18,6 @@ class Form extends Component {
 
     handleSubmit = e => {
         e.preventDefault();
-        console.log(this.props)
         this.props.addSong(this.state, this.props.history);
     }
 

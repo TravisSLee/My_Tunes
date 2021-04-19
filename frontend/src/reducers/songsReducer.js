@@ -18,7 +18,6 @@ const songsReducer = (state = { songs: [], loading: false}, action) => {
             }
         case "DELETE_SONG":
             let songs = state.songs.filter(song => song.id !== action.song.id);
-            debugger
             return {
                 ...state, 
                 songs
